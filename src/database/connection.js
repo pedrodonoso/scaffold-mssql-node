@@ -18,7 +18,7 @@ async function getConnection() {
         const pool = await sql.connect(dbSettings);
         // TESTING
         const result = await pool.request().query('SELECT 1');
-        console.log(result);
+        console.log("QUERY TESTING", result);
         // END TESTING
         return pool;
     } catch (error ) {

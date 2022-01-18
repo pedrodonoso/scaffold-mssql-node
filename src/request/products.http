@@ -1,0 +1,31 @@
+@api = http://localhost:3000
+@products = /products
+
+### GETTING ALL PRODUCTS
+GET {{api}}/products
+
+### ADD A PRODUCT
+POST {{api}}/products
+Content-Type: application/json
+
+{
+    "name": "microphone",
+    "description": "microphone samsing",
+    "quantity": 605
+}
+
+### GETTING A PRODUCT
+GET {{api}}/products/2
+
+### DELETING A PRODUCT
+DELETE {{api}}/products/11
+
+### UPDATING A PRODUCT
+PUT {{api}}/products/2
+Content-Type: application/json
+
+{
+    "name": "Laptop HP",
+    "description": "gaming laptop hp",
+    "quantity": 402
+}

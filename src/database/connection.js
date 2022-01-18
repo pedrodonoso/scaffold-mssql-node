@@ -1,11 +1,11 @@
+import config from '../config';
 import sql from 'mssql';
 
 const dbSettings = {
-  user: 'admin',
-  password: 'adminadmin',
-  server: 'localhost',
-  instanceName: 'LAPTOP-FKIMJSP3', // no es necesaria
-  database: 'customdatabase',
+  user: config.dbUser,
+  password: config.dbPassword,
+  server: config.dbServer,
+  database: config.dbDatabase,
   //   port: '1433', // defecto
   options: {
     encrypt: true, // for azure
@@ -16,10 +16,7 @@ const dbSettings = {
 export async function getConnection() {
     try {
         const pool = await sql.connect(dbSettings);
-        // TESTING
-        // const result = await pool.request().query('SELECT 1');
-        // console.log(result);
-        // END TESTING
+        console.log('connected to database.')
         return pool;
     } catch (error ) {
         console.error(error);
